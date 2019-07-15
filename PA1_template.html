@@ -235,7 +235,6 @@ activity_data$steps[is.na(activity_data$steps)] &lt;- sapply(activity_data$inter
                                                             { with(mean_steps_per_interval,
                                                                    mean_steps[interval==x_interval])})
 total_steps_per_day &lt;- group_by(activity_data, date) %&gt;%
-  filter(!is.na(steps)) %&gt;%
   summarise(total=sum(steps))
 # histogram of total steps
 hist(total_steps_per_day$total, main=&quot;Total Steps Per Day&quot;, xlab=&quot;Total Steps&quot;, ylab=&quot;Frequency&quot;)</code></pre>

@@ -56,7 +56,6 @@ activity_data$steps[is.na(activity_data$steps)] <- sapply(activity_data$interval
                                                             { with(mean_steps_per_interval,
                                                                    mean_steps[interval==x_interval])})
 total_steps_per_day <- group_by(activity_data, date) %>%
-  filter(!is.na(steps)) %>%
   summarise(total=sum(steps))
 # histogram of total steps
 hist(total_steps_per_day$total, main="Total Steps Per Day", xlab="Total Steps", ylab="Frequency")
